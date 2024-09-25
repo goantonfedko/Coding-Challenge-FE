@@ -1,0 +1,20 @@
+<div class="filters">
+  <button
+    class="filters__button"
+    (click)="onSort('downloadSpeed')"
+  >
+    Sort by Speed {{ getSortIndicator('downloadSpeed') }}
+  </button>
+  <button
+    class="filters__button"
+    (click)="onSort('price')"
+  >
+    Sort by Price {{ getSortIndicator('price') }}
+  </button>
+  <button
+    class="filters__button"
+    (click)="onSort('name')"
+  >
+    Sort by Name {{ getSortIndicator('name') }}
+  </button>
+</div>

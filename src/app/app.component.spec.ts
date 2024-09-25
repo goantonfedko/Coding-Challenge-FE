@@ -1,10 +1,22 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ResultListComponent } from './components/result-list/result-list.component';
+import { FiltersComponent } from './components/filters/filters.component';
+import { TariffCardComponent } from './components/tariff-card/tariff-card.component';
+import { TariffService } from './services/tariff.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      declarations: [
+        AppComponent,
+        ResultListComponent,
+        FiltersComponent,
+        TariffCardComponent,
+      ],
+      imports: [HttpClientTestingModule],
+      providers: [TariffService],
     }).compileComponents();
   });
 
@@ -12,18 +24,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have the 'Fedko-Tariff-test' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('Fedko-Tariff-test');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Fedko-Tariff-test');
   });
 });

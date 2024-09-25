@@ -1,0 +1,12 @@
+<div class="result-list">
+  <app-filters
+    [sortAttribute]="sortAttribute"
+    [sortDirection]="sortDirection"
+    (sort)="onSort($event)"
+  ></app-filters>
+  <app-tariff-card
+    *ngFor="let tariff of filteredTariffs; let i = index"
+    [tariff]="tariff"
+    [index]="i + 1"
+  ></app-tariff-card>
+</div>

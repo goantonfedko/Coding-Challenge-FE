@@ -1,0 +1,19 @@
+.filters {
+  display: flex;
+  justify-content: space-around;
+  padding: 24px 0;
+
+  @media (max-width: 1024px) {
+    padding: 10px 0;
+  }
+
+  @media (max-width: 767px) {
+    padding: 10px 0 0;
+    gap: 8px;
+  }
+}
+
+.filters__button {
+  padding: 10px 20px;
+  cursor: pointer;
+}

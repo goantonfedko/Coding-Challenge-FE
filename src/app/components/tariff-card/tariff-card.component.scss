@@ -1,0 +1,202 @@
+.tariff-card {
+  display: grid;
+  grid-template-columns: 24px repeat(2, 1fr) 2fr 1fr 12px;
+  grid-template-rows: 20px repeat(2, 1fr) 20px;
+  grid-column-gap: var(--gap-main);
+  grid-row-gap: 0;
+  align-items: start;
+  border: 1px solid var(--border-color);
+}
+
+.tariff-card__number {
+  grid-column: 1 / 2;
+  grid-row: 1 / 5;
+  font-size: var(--font-size-main);
+  border-right: 1px solid var(--border-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tariff-card__name {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+  font-size: var(--font-size-main);
+}
+
+.tariff-card__speed {
+  grid-column: 3 / 4;
+  grid-row: 2 / 4;
+  display: flex;
+  gap: var(--gap-small);
+  flex-direction: column;
+}
+
+.speed-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-small);
+}
+
+.speed-item__label {
+  font-size: var(--font-size-secondary);
+}
+
+.speed-item__bar {
+  height: var(--speed-item-bar-height);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.speed-item__filled {
+  height: 100%;
+  width: 25%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-secondary);
+  font-weight: bold;
+}
+
+.speed-item__text {
+  flex: 1 1 auto;
+  display: block;
+  font-size: var(--font-size-main);
+  text-align: center;
+  text-indent: -10px;
+}
+
+.speed-item--download .speed-item__filled {
+  background-color: blue;
+}
+
+.speed-item--upload .speed-item__filled {
+  background-color: green;
+}
+
+.tariff-card__advantages {
+  grid-column: 4 / 5;
+  grid-row: 2 / 4;
+  list-style: inside;
+  padding: 0;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.tariff-card__advantages li {
+  font-size: var(--font-size-secondary);
+  margin-bottom: 5px;
+}
+
+.tariff-card__pricing {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+  text-align: right;
+}
+
+.tariff-card__price {
+  font-size: var(--font-size-large);
+  font-weight: bold;
+}
+
+.tariff-card__button {
+  grid-column: 5 / 6;
+  grid-row: 3 / 4;
+}
+
+.tariff-card-button {
+  width: 100%;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.tariff-card-button__text {
+  font-size: var(--font-size-main);
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .tariff-card {
+    grid-template-columns: 34px repeat(2, 1fr) 1fr 1fr 12px;
+  }
+
+  .tariff-card__number {
+    padding-top: 12px;
+    padding-left: 12px;
+    border: none;
+    align-items: flex-start;
+  }
+
+  .speed-item__label {
+    display: none;
+  }
+
+  .tariff-card__advantages {
+    display: none;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+  .tariff-card {
+    grid-template-columns: 20px repeat(2, 1fr) 1fr 24px 0;
+  }
+
+  .tariff-card__pricing {
+    align-items: center;
+  }
+
+  .tariff-card__upload {
+    display: none;
+  }
+
+  .tariff-card__pricing {
+    grid-column: 4 / 5;
+    grid-row: 2 / 4;
+    text-align: center;
+  }
+
+  .tariff-card__button {
+    grid-column: 5 / 6;
+    grid-row: 2 / 4;
+  }
+
+  .tariff-card-button {
+    height: 100%;
+    padding: 24px 4px;
+
+    &:before {
+      content: ">";
+    }
+  }
+
+  .tariff-card-button__text,
+  .speed-item--upload {
+    display: none;
+  }
+
+  .speed-item__text {
+    text-align: left;
+    text-indent: initial;
+  }
+
+  .speed-item__bar {
+    border: none;
+    border-radius: initial;
+    height: 40px;
+    align-items: flex-start;
+  }
+
+  .speed-item--download .speed-item__filled {
+    background-color: transparent;
+    color: black;
+    align-items: flex-start;
+  }
+}
