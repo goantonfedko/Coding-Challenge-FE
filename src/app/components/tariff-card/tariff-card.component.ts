@@ -10,4 +10,10 @@ import { Tariff } from '../../models/tariff.model';
 export class TariffCardComponent {
   @Input() tariff!: Tariff;
   @Input() index!: number;
+
+  showAll: boolean = false;
+
+  toggleShowAll() {
+    this.showAll = !this.showAll;
+  }
 }

@@ -95,6 +95,15 @@
   margin-bottom: 5px;
 }
 
+.tariff-card__action {
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    color: blue;
+  }
+}
+
 .tariff-card__pricing {
   grid-column: 5 / 6;
   grid-row: 2 / 3;
@@ -109,6 +118,9 @@
 .tariff-card__button {
   grid-column: 5 / 6;
   grid-row: 3 / 4;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
 }
 
 .tariff-card-button {

@@ -21,8 +21,14 @@
   </div>
 
   <ul class="tariff-card__advantages">
-    <li *ngFor="let advantage of tariff.advantages">{{ advantage }}</li>
+    <li *ngFor="let advantage of (showAll ? tariff.advantages : tariff.advantages | slice:0:3)">
+      {{ advantage }}
+    </li>
+    <li *ngIf="tariff.advantages.length > 3">
+      <span class="tariff-card__action" (click)="toggleShowAll()">{{ showAll ? 'Show less' : '...' }}</span>
+    </li>
   </ul>
+
   <div class="tariff-card__pricing">
     <div class="tariff-card__price">{{ tariff.price }} €</div>
   </div>
